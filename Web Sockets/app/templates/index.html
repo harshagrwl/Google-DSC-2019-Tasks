@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>ChatSocket Home</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+        <!-- Bootstrap CSS -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet"/>
+
+        <link href="/static/styles.css" rel="stylesheet"/>
+
+        <script type="text/javascript" src="//code.jquery.com/jquery-1.4.2.min.js"></script>
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
+    </head>
+    <body>
+        <nav class="navbar fixed-top navbar-dark bg-dark">
+            <a class="navbar-brand" href="/">ChatSocket: A realtime chat platform</a>
+        </nav>
+        <div class="container-fluid">
+            <br>
+            <br>
+            <br>    
+        <h4>Welcome! Please Enter your name and select your Chat Room.</h4>
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            {{ form.name.label }}: {{ form.name() }} {% for error in form.name.errors %}{{ error }}{% endfor %}<br>
+            {{ form.room.label }}: {{ form.room() }} {% for error in form.room.errors %}{{ error }}{% endfor %}<br>
+            {{ form.submit() }}
+        </form>
+        </div>
+    </body>
+</html>
